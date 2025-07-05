@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Text-to-Speech App</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simple Text-to-Speech App</h1>
+
+      <div class="input-tabs">
+        <button class="tab-btn active" data-tab="paste">Paste Text</button>
+        <button class="tab-btn" data-tab="file">Upload File</button>
+      </div>
+
+      <div class="tab-content" id="pasteTab">
+        <textarea
+          id="textInput"
+          placeholder="Paste or type your text here..."
+        ></textarea>
+        <button class="load-text-btn" id="loadTextBtn">Load Text</button>
+      </div>
+
+      <div class="tab-content" id="fileTab" style="display: none">
+        <div class="file-input-wrapper">
+          <label for="fileInput" class="file-label">Choose Text File</label>
+          <input type="file" id="fileInput" accept=".txt" />
+          <span id="fileName" style="margin-left: 10px; color: #666"></span>
+        </div>
+      </div>
+
+      <div class="text-preview" id="textPreview">
+        No text loaded. Please paste text or select a file.
+      </div>
+
+      <div class="voice-controls">
+        <div>
+          <label for="voiceSelect">Voice:</label>
+          <select id="voiceSelect"></select>
+          <small style="color: #666; display: block; margin-top: 5px"
+            >💡 Tip: Look for voices with "Natural", "Enhanced", or "Neural" in
+            the name</small
+          >
+        </div>
+
+        <div>
+          <label for="emotionSelect">Emotion/Style:</label>
+          <select id="emotionSelect">
+            <option value="neutral">Neutral</option>
+            <option value="happy">Happy/Cheerful</option>
+            <option value="sad">Sad/Melancholic</option>
+            <option value="excited">Excited/Energetic</option>
+            <option value="calm">Calm/Soothing</option>
+            <option value="serious">Serious/Professional</option>
+            <option value="storytelling">Storytelling/Narrative</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="rateSlider"
+            >Speed: <span class="range-value" id="rateValue">1</span></label
+          >
+          <input
+            type="range"
+            id="rateSlider"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+        </div>
+
+        <div>
+          <label for="pitchSlider"
+            >Pitch: <span class="range-value" id="pitchValue">1</span></label
+          >
+          <input
+            type="range"
+            id="pitchSlider"
+            min="0"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+        </div>
+
+        <div>
+          <label for="volumeSlider"
+            >Volume: <span class="range-value" id="volumeValue">1</span></label
+          >
+          <input
+            type="range"
+            id="volumeSlider"
+            min="0"
+            max="1"
+            step="0.1"
+            value="1"
+          />
+        </div>
+
+        <div>
+          <label for="emphasisSlider"
+            >Emphasis:
+            <span class="range-value" id="emphasisValue">1</span></label
+          >
+          <input
+            type="range"
+            id="emphasisSlider"
+            min="0.5"
+            max="1.5"
+            step="0.1"
+            value="1"
+          />
+          <small style="color: #666; display: block; margin-top: 5px"
+            >Controls dynamic range and expression</small
+          >
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" id="pausesCheck" checked /> Natural Pauses
+          </label>
+          <small style="color: #666; display: block; margin-top: 5px"
+            >Add pauses at punctuation for more natural flow</small
+          >
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="speak-btn" id="speakBtn" disabled>Speak</button>
+        <button class="pause-btn" id="pauseBtn" disabled>Pause/Resume</button>
+        <button class="stop-btn" id="stopBtn" disabled>Stop</button>
+        <button class="download-btn" id="downloadBtn" disabled>
+          Download Audio
+        </button>
+        <button
+          class="record-btn"
+          id="recordBtn"
+          disabled
+          style="background-color: #e74c3c; color: white"
+        >
+          🔴 Record & Speak
+        </button>
+      </div>
+
+      <div class="status" id="status"></div>
+    </div>
+
+    <pre id="textPreview"></pre>
+    <aside id="status" class="status" style="display: none"></aside>
+
+    <script type="module" src="js/app.js"></script>
+
+    <footer style="text-align:center; margin:20px 0; font-size:0.9em; color:#666;">
+        Made by Panya Ou. Website: 
+        <a href="https://panou.dev/" target="_blank" rel="noopener">panou.dev</a>
+      </footer>
+  </body>
+</html>
