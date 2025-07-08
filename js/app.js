@@ -240,11 +240,11 @@ function showRecordingOptions() {
             `;
 
   modal.innerHTML = `
-                <h3 style="margin-top: 0; color: #dc3545;">⚠️ Browser Recording Limitation</h3>
+                <h3 style="margin-top: 0; color: #dc3545;">Browser Recording Limitation</h3>
                 <p><strong>Important:</strong> Web browsers cannot directly record system audio (the speech output) due to security restrictions. They can only access microphone input.</p>
                 
                 <div style="margin: 20px 0;">
-                    <h4>✅ Recommended Solutions:</h4>
+                    <h4>Recommended Solutions:</h4>
                     
                     <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0;">
                         <h5 style="margin-top: 0;">1. Screen Recording Software (Best Option)</h5>
@@ -276,7 +276,7 @@ function showRecordingOptions() {
                         <p style="margin-bottom: 0;"><small>Then select the virtual mic in browser permissions.</small></p>
                     </div>
                     
-                    <h4>❌ Why Direct Recording Doesn't Work:</h4>
+                    <h4>Why Direct Recording Doesn't Work:</h4>
                     <p style="color: #666;">Browser security policies prevent web pages from accessing system audio to protect user privacy. This is why we can only record from microphones.</p>
                 </div>
                 
@@ -400,7 +400,7 @@ function stopRecording() {
   if (mediaRecorder && mediaRecorder.state !== "inactive") {
     mediaRecorder.stop();
     isRecording = false;
-    recordBtn.textContent = "🔴 Record & Speak";
+    recordBtn.textContent = "Record & Speak";
     recordBtn.classList.remove("recording");
     speechSynthesis.cancel();
     resetControls();
@@ -739,7 +739,7 @@ downloadBtn.addEventListener("click", () => {
                     
                     <div style="margin: 20px 0;">
                         <h4>Option 1: Use the Record Button</h4>
-                        <p>Click the "🔴 Record & Speak" button to record while the text is being spoken.</p>
+                        <p>Click the "Record & Speak" button to record while the text is being spoken.</p>
                         
                         <h4>Option 2: Use Screen Recording</h4>
                         <p>Use screen recording software (like OBS Studio) to capture system audio.</p>
